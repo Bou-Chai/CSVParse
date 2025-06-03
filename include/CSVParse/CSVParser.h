@@ -6,7 +6,7 @@
 
 class CSVParser {
 public:
-    std::vector<std::vector<float>> parse(std::string fileName);
+    std::vector<std::vector<float>>& parse(std::string fileName);
 };
 
 #endif
