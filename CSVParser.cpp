@@ -13,15 +13,19 @@ std::vector<std::vector<float>> CSVParser::parse(std::string fileName) {
             table.push_back({});
             std::string element = "";
             for (int j = 0; j < line.size(); j++) {
-                if (line[j] != ',') {
+                if (std::isdigit(line[j]) || line[j] == '.') {
                     element += line[j];
-                } else {
-                    //std::cout << element << "\n";
+                } else if (line[j] == ',') {
+                    std::cout << element << "\n";
                     table[i].push_back(std::stof(element));
                     element = "";
+                } else {
+                    break;
                 }
             }
-            table[i].push_back(std::stof(element));
+            if (element != "") {
+                table[i].push_back(std::stof(element));
+            }
         }
         file.close();
     } else {
