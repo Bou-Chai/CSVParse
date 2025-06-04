@@ -3,8 +3,8 @@
 #include <vector>
 #include "CSVParse/CSVParser.h"
 
-std::vector<std::vector<float>>& CSVParser::parse(std::string fileName) {
-    std::vector<std::vector<float>>* table = new std::vector<std::vector<float>>;
+std::vector<std::vector<double>>& CSVParser::parse(std::string fileName) {
+    std::vector<std::vector<double>>* table = new std::vector<std::vector<double>>;
     std::ifstream file(fileName);
     std::string line;
 
